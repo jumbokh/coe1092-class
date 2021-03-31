@@ -13,3 +13,8 @@
 4. [5燈全亮](https://github.com/jumbokh/coe1092-class/blob/main/lab/ex2_5light/ex2_5light.ino)
 5. [閃燈](https://github.com/jumbokh/coe1092-class/blob/main/lab/ex2_5lightflip/ex2_5lightflip.ino)
 ##
+### refers
+* [ESP32](https://stanley2910.pixnet.net/blog/post/192141981-esp32-%E7%A1%AC%E9%AB%94%E8%A6%8F%E6%A0%BC)
+* [ESP32s spec.](https://docs.ai-thinker.com/_media/esp32/docs/nodemcu-32s_product_specification.pdf)
+* [ESP32 規格書](https://docs.ai-thinker.com/_media/esp32/docs/nodemcu-32s_%E4%BA%A7%E5%93%81%E8%A7%84%E6%A0%BC%E4%B9%A6.pdf)
+##
