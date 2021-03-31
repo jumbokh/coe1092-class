@@ -1,0 +1,199 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="144" x="188" y="-12">
+    <field name="BOARD_TYPE">ESP32</field>
+    <next>
+      <block type="initializes_loop" id="145">
+        <statement name="CONTENT">
+          <block type="esp32_board_rgb" id="146" inline="true">
+            <field name="RGB">0</field>
+            <value name="ON_OFF">
+              <block type="inout_highlow" id="147">
+                <field name="BOOL">HIGH</field>
+              </block>
+            </value>
+            <next>
+              <block type="delay_custom" id="148" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="149">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="esp32_board_rgb" id="150" inline="true">
+                    <field name="RGB">0</field>
+                    <value name="ON_OFF">
+                      <block type="inout_highlow" id="151">
+                        <field name="BOOL">LOW</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="delay_custom" id="152" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="153">
+                            <field name="NUM">1000</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="esp32_board_rgb" id="176" inline="true">
+                            <field name="RGB">1</field>
+                            <value name="ON_OFF">
+                              <block type="inout_highlow" id="177">
+                                <field name="BOOL">HIGH</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="delay_custom" id="172" inline="false">
+                                <value name="DELAY_TIME">
+                                  <block type="math_number" id="173">
+                                    <field name="NUM">1000</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="esp32_board_rgb" id="174" inline="true">
+                                    <field name="RGB">1</field>
+                                    <value name="ON_OFF">
+                                      <block type="inout_highlow" id="175">
+                                        <field name="BOOL">LOW</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="delay_custom" id="178" inline="false">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="179">
+                                            <field name="NUM">1000</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="esp32_board_rgb" id="180" inline="true">
+                                            <field name="RGB">2</field>
+                                            <value name="ON_OFF">
+                                              <block type="inout_highlow" id="181">
+                                                <field name="BOOL">HIGH</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="delay_custom" id="182" inline="false">
+                                                <value name="DELAY_TIME">
+                                                  <block type="math_number" id="183">
+                                                    <field name="NUM">1000</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="esp32_board_rgb" id="184" inline="true">
+                                                    <field name="RGB">2</field>
+                                                    <value name="ON_OFF">
+                                                      <block type="inout_highlow" id="185">
+                                                        <field name="BOOL">LOW</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="delay_custom" id="186" inline="false">
+                                                        <value name="DELAY_TIME">
+                                                          <block type="math_number" id="187">
+                                                            <field name="NUM">1000</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="esp32_board_rgb" id="188" inline="true">
+                                                            <field name="RGB">3</field>
+                                                            <value name="ON_OFF">
+                                                              <block type="inout_highlow" id="189">
+                                                                <field name="BOOL">HIGH</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="delay_custom" id="190" inline="false">
+                                                                <value name="DELAY_TIME">
+                                                                  <block type="math_number" id="191">
+                                                                    <field name="NUM">1000</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="esp32_board_rgb" id="192" inline="true">
+                                                                    <field name="RGB">3</field>
+                                                                    <value name="ON_OFF">
+                                                                      <block type="inout_highlow" id="193">
+                                                                        <field name="BOOL">LOW</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="delay_custom" id="194" inline="false">
+                                                                        <value name="DELAY_TIME">
+                                                                          <block type="math_number" id="195">
+                                                                            <field name="NUM">1000</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="esp32_board_rgb" id="196" inline="true">
+                                                                            <field name="RGB">4</field>
+                                                                            <value name="ON_OFF">
+                                                                              <block type="inout_highlow" id="197">
+                                                                                <field name="BOOL">HIGH</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="delay_custom" id="198" inline="false">
+                                                                                <value name="DELAY_TIME">
+                                                                                  <block type="math_number" id="199">
+                                                                                    <field name="NUM">1000</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="esp32_board_rgb" id="200" inline="true">
+                                                                                    <field name="RGB">4</field>
+                                                                                    <value name="ON_OFF">
+                                                                                      <block type="inout_highlow" id="201">
+                                                                                        <field name="BOOL">LOW</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="delay_custom" id="202" inline="false">
+                                                                                        <value name="DELAY_TIME">
+                                                                                          <block type="math_number" id="203">
+                                                                                            <field name="NUM">1000</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
