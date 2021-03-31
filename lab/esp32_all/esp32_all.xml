@@ -1,0 +1,77 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="1" x="80" y="40">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="board_setup" id="31">
+        <field name="BOARD_TYPE">ESP32</field>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="2">
+        <statement name="CONTENT">
+          <block type="controls_for" id="39" inline="true">
+            <field name="VAR">i</field>
+            <value name="FROM">
+              <block type="math_number" id="40">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number" id="41">
+                <field name="NUM">4</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="esp32_board_rgb_custom" id="50" inline="true">
+                <value name="RGB">
+                  <block type="variables_get" id="57">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">i</field>
+                  </block>
+                </value>
+                <value name="ON_OFF">
+                  <block type="inout_highlow" id="52">
+                    <field name="BOOL">HIGH</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="69" inline="false">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="70">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="esp32_board_rgb_custom" id="71" inline="true">
+                        <value name="RGB">
+                          <block type="variables_get" id="72">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                        <value name="ON_OFF">
+                          <block type="inout_highlow" id="73">
+                            <field name="BOOL">LOW</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay_custom" id="74" inline="false">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="75">
+                                <field name="NUM">100</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
