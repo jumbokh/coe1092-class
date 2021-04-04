@@ -1,0 +1,155 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="1" x="80" y="40">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="variables_set" id="8" inline="true">
+        <field name="TYPE">Float</field>
+        <field name="VAR">refvol</field>
+        <value name="VALUE">
+          <block type="math_number" id="19">
+            <field name="NUM">3.3</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="85" inline="true">
+            <field name="TYPE">Float</field>
+            <field name="VAR">vin</field>
+            <value name="VALUE">
+              <block type="math_number" id="96">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="361" inline="true">
+                <field name="TYPE">Float</field>
+                <field name="VAR">total_time</field>
+                <value name="VALUE">
+                  <block type="math_number" id="372">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_init" id="213">
+                    <field name="SPEED">9600</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="2">
+        <statement name="CONTENT">
+          <block type="variables_set" id="512" inline="true">
+            <field name="TYPE">Number</field>
+            <field name="VAR">rctime</field>
+            <value name="VALUE">
+              <block type="millis" id="524"></block>
+            </value>
+            <next>
+              <block type="variables_set" id="500" inline="true">
+                <field name="TYPE">Float</field>
+                <field name="VAR">vin</field>
+                <value name="VALUE">
+                  <block type="inout_custom_analog_read" id="271" inline="true">
+                    <value name="PIN_ANALOGREAD">
+                      <block type="math_number" id="272">
+                        <field name="NUM">36</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="537" inline="true">
+                    <field name="TYPE">Float</field>
+                    <field name="VAR">voltage</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="548" inline="true">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="variables_get" id="563">
+                            <field name="TYPE">Float</field>
+                            <field name="VAR">vin</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="578">
+                            <field name="TYPE">Float</field>
+                            <field name="VAR">refvol</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="625" inline="true">
+                        <field name="TYPE">Float</field>
+                        <field name="VAR">voltage</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="602" inline="true">
+                            <field name="OP">DIVIDE</field>
+                            <value name="A">
+                              <block type="variables_get" id="591">
+                                <field name="TYPE">Float</field>
+                                <field name="VAR">voltage</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="501">
+                                <field name="NUM">4096</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_print" id="633" inline="false">
+                            <value name="CONTENT">
+                              <block type="math_arithmetic" id="645" inline="true">
+                                <field name="OP">DIVIDE</field>
+                                <value name="A">
+                                  <block type="variables_get" id="658">
+                                    <field name="TYPE">Number</field>
+                                    <field name="VAR">rctime</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="691">
+                                    <field name="NUM">1000</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_print" id="717" inline="false">
+                                <value name="CONTENT">
+                                  <block type="text" id="718">
+                                    <field name="TEXT">, </field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="serial_println" id="708" inline="false">
+                                    <value name="CONTENT">
+                                      <block type="variables_get" id="731">
+                                        <field name="TYPE">Float</field>
+                                        <field name="VAR">voltage</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

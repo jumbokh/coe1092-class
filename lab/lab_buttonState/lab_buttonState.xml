@@ -1,0 +1,110 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="1" x="88" y="63">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="board_setup" id="338">
+        <field name="BOARD_TYPE">ESP32</field>
+        <next>
+          <block type="serial_init" id="1572">
+            <field name="SPEED">9600</field>
+            <next>
+              <block type="variables_set" id="1713" inline="true">
+                <field name="TYPE">Number</field>
+                <field name="VAR">buttonState</field>
+                <value name="VALUE">
+                  <block type="math_number" id="1714">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="1707" inline="true">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">lastState</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="1708">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="2">
+        <statement name="CONTENT">
+          <block type="variables_set" id="1613" inline="true">
+            <field name="TYPE">Number</field>
+            <field name="VAR">buttonState</field>
+            <value name="VALUE">
+              <block type="inout_custom_digital_read" id="1563" inline="true">
+                <value name="PIN_READ">
+                  <block type="math_number" id="1564">
+                    <field name="NUM">5</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="1580" inline="false">
+                <value name="CONTENT">
+                  <block type="variables_get" id="1667">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">lastState</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id="1428" inline="false">
+                    <value name="IF0">
+                      <block type="logic_compare" id="1446" inline="true">
+                        <field name="OP">NEQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="1618">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">buttonState</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="1721">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">lastState</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="1722" inline="true">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">lastState</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="1741">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">buttonState</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="esp32_board_rgb" id="1703" inline="true">
+                            <field name="RGB">7</field>
+                            <value name="ON_OFF">
+                              <block type="variables_get" id="1752">
+                                <field name="TYPE">Number</field>
+                                <field name="VAR">lastState</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

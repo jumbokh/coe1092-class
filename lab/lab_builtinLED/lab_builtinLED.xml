@@ -1,0 +1,44 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="1" x="80" y="40">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="board_setup" id="338">
+        <field name="BOARD_TYPE">ESP32</field>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="2">
+        <statement name="CONTENT">
+          <block type="inout_digital_write" id="250">
+            <field name="PIN">2</field>
+            <field name="STAT">HIGH</field>
+            <next>
+              <block type="delay_custom" id="350" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="351">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="inout_digital_write" id="352">
+                    <field name="PIN">2</field>
+                    <field name="STAT">LOW</field>
+                    <next>
+                      <block type="delay_custom" id="353" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="354">
+                            <field name="NUM">1000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

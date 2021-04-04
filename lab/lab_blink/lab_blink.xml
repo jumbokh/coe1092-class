@@ -1,0 +1,13 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="1" x="80" y="40">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="board_setup" id="338">
+        <field name="BOARD_TYPE">ESP32</field>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="2"></block>
+    </next>
+  </block>
+</xml>
