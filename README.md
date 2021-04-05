@@ -18,6 +18,7 @@
 8. [按鈕切換](https://github.com/jumbokh/coe1092-class/tree/main/lab/lab_buttonState)
 9. [按鈕切換二](https://github.com/jumbokh/coe1092-class/tree/main/lab/lab_buttontg)
 10. [RC2電路實驗](https://github.com/jumbokh/coe1092-class/tree/main/lab/rclab)
+* ![RC](https://github.com/jumbokh/coe1092-class/blob/main/images/esp32s-3v3RC_bb.jpg)
 ##
 ### refers
 * [ESP32](https://stanley2910.pixnet.net/blog/post/192141981-esp32-%E7%A1%AC%E9%AB%94%E8%A6%8F%E6%A0%BC)
