@@ -1,6 +1,8 @@
 # 物聯網應用創意實作 class 
 # 4/1, 4/8, 4/15, 4/22
 ##
+### 講義 [BlocklyDuino](https://github.com/jumbokh/coe1092-class/blob/main/doc/BlocklyDuino.pptx)
+##
 * ![esp32s](https://github.com/jumbokh/coe1092-class/blob/main/images/ESP32s-pinout.png)
 * ![esp32-addon](https://github.com/jumbokh/coe1092-class/blob/main/images/esp32-addon.jpg)
 ### 安裝 Blockly [分享](https://drive.google.com/drive/folders/1VclhUVmHykGprA47lIaqz-tVqBDMcxmh?usp=sharing)
