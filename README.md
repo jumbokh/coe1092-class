@@ -13,6 +13,7 @@
 4. [5燈全亮](https://github.com/jumbokh/coe1092-class/blob/main/lab/ex2_5light/ex2_5light.ino)
 5. [閃燈](https://github.com/jumbokh/coe1092-class/blob/main/lab/ex2_5lightflip/ex2_5lightflip.ino)
 6. [按鈕實驗](https://github.com/jumbokh/coe1092-class/blob/main/lab/lab_button/lab_button.ino)
+* ![ESP32s-btn led](https://github.com/jumbokh/coe1092-class/blob/main/images/esp32s-btnled_bb.jpg)
 7. [按鈕開關燈](https://github.com/jumbokh/coe1092-class/tree/main/lab/lab_buttonSW)
 8. [按鈕切換](https://github.com/jumbokh/coe1092-class/tree/main/lab/lab_buttonState)
 9. [按鈕切換二](https://github.com/jumbokh/coe1092-class/tree/main/lab/lab_buttontg)
