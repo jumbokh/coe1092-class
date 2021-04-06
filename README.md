@@ -5,7 +5,7 @@
 ##
 * ![esp32s](https://github.com/jumbokh/coe1092-class/blob/main/images/ESP32s-pinout.png)
 * ![esp32-addon](https://github.com/jumbokh/coe1092-class/blob/main/images/esp32-addon.jpg)
-### 安裝 Blockly [分享](https://drive.google.com/drive/folders/1VclhUVmHykGprA47lIaqz-tVqBDMcxmh?usp=sharing)
+### 安裝 Blockly [分享](https://drive.google.com/file/d/1ChPCZnHeYIl2f5ENYukeedVD8L_4bxSX/view?usp=sharing)
 * [如何安裝吉哥自製積木](https://sites.google.com/jes.mlc.edu.tw/ljj/linkit7697/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%9D%E5%90%89%E5%93%A5%E8%87%AA%E8%A3%BD%E7%A9%8D%E6%9C%A8?authuser=0)
 * [ESP32教學輔助板](https://sites.google.com/jes.mlc.edu.tw/ljj/linkit7697/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%9D%E5%90%89%E5%93%A5%E8%87%AA%E8%A3%BD%E7%A9%8D%E6%9C%A8?authuser=0)
 * [下載吉哥積木及安裝](https://drive.google.com/drive/folders/1FizimTpWh6PhsD6qNA5MPQnHxEZ9vS5d)
