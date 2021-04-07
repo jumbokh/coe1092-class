@@ -1,0 +1,106 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="119" x="80" y="40">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="lcd_i2c_setting" id="129">
+        <field name="LCD_DIM">1602</field>
+        <field name="PIN">PIN</field>
+        <field name="I2C_ADDRESS">0x27</field>
+        <next>
+          <block type="lcd_i2c_clear" id="170"></block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="120">
+        <statement name="CONTENT">
+          <block type="lcd_i2c_set_cursor" id="179" inline="true">
+            <value name="COL">
+              <block type="math_number" id="180">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="ROW">
+              <block type="math_number" id="181">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="lcd_i2c_put" id="190" inline="false">
+                <value name="VALUE">
+                  <block type="text_join" id="266" inline="false">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="273">
+                        <field name="TEXT">Temp.: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="dht_read_pin" id="279" inline="true">
+                        <field name="SENSOR">DHT11</field>
+                        <field name="TYPE">C</field>
+                        <value name="PIN">
+                          <block type="math_number" id="280">
+                            <field name="NUM">5</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="lcd_i2c_set_cursor" id="192" inline="true">
+                    <value name="COL">
+                      <block type="math_number" id="193">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="ROW">
+                      <block type="math_number" id="194">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="lcd_i2c_put" id="195" inline="false">
+                        <value name="VALUE">
+                          <block type="text_join" id="281" inline="false">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="282">
+                                <field name="TEXT">Humi.: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="dht_read_pin" id="283" inline="true">
+                                <field name="SENSOR">DHT11</field>
+                                <field name="TYPE">h</field>
+                                <value name="PIN">
+                                  <block type="math_number" id="284">
+                                    <field name="NUM">5</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay_custom" id="258" inline="false">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="259">
+                                <field name="NUM">1000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
