@@ -26,7 +26,9 @@
 10. [RC2電路實驗](https://github.com/jumbokh/coe1092-class/tree/main/lab/rclab)
 * ![RC](https://github.com/jumbokh/coe1092-class/blob/main/images/esp32s-3v3RC_bb.jpg)
 11. [DHTtest](https://github.com/jumbokh/coe1092-class/tree/main/lab/dhttest)
+* ![DHT11](https://github.com/jumbokh/coe1092-class/blob/main/images/DHT11Test_bb.jpg)
 12. [LCD1602](https://github.com/jumbokh/coe1092-class/tree/main/lab/lcd1602test)
+* ![LCD1602](https://github.com/jumbokh/coe1092-class/blob/main/images/ESP32s-LCD1602Test_bb.jpg)
 13. [DHT11+LCD1602](https://github.com/jumbokh/coe1092-class/tree/main/lab/lcd1602DHT11)
 ##
 ### refers
