@@ -10,6 +10,7 @@
 * [ESP32教學輔助板](https://sites.google.com/jes.mlc.edu.tw/ljj/linkit7697/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%9D%E5%90%89%E5%93%A5%E8%87%AA%E8%A3%BD%E7%A9%8D%E6%9C%A8?authuser=0)
 * [下載吉哥積木及安裝](https://drive.google.com/drive/folders/1FizimTpWh6PhsD6qNA5MPQnHxEZ9vS5d)
 * [紅外線](https://sites.google.com/jes.mlc.edu.tw/ljj/linkit7697/%E7%B4%85%E5%A4%96%E7%B7%9A%E7%99%BC%E5%B0%84%E8%88%87%E6%8E%A5%E6%94%B6)
+* [聯發科參考](https://docs.labs.mediatek.com/linkit-7697-blocklyduino/a27-1602-2004-12883072.html)
 ##
 ### Lab
 1. [亮一燈](https://github.com/jumbokh/coe1092-class/blob/main/lab/ex1_red/ex1_red.ino)
