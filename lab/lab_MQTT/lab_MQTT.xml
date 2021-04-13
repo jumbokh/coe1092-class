@@ -1,0 +1,190 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="1" x="80" y="40">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="linkit_wifi_wait_until_ready" id="8" inline="false">
+        <value name="SSID">
+          <block type="text" id="9">
+            <field name="TEXT">gigaenergy</field>
+          </block>
+        </value>
+        <value name="PASSWORD">
+          <block type="text" id="10">
+            <field name="TEXT">12369874</field>
+          </block>
+        </value>
+        <next>
+          <block type="connect_mqtt" id="27" inline="false">
+            <value name="BROKER">
+              <block type="text" id="28">
+                <field name="TEXT">gpssensor.ddns.net</field>
+              </block>
+            </value>
+            <value name="PORT">
+              <block type="math_number" id="29">
+                <field name="NUM">1883</field>
+              </block>
+            </value>
+            <value name="ID">
+              <block type="text" id="30">
+                <field name="TEXT">jumbokh</field>
+              </block>
+            </value>
+            <value name="USERNAME">
+              <block type="text" id="31">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <value name="PASSWORD">
+              <block type="text" id="32">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <next>
+              <block type="subscribe_mqtt" id="49" inline="true">
+                <value name="TOPIC">
+                  <block type="text" id="50">
+                    <field name="TEXT">jumbokh/light</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="2">
+        <statement name="CONTENT">
+          <block type="variables_set" id="163" inline="true">
+            <field name="TYPE">Float</field>
+            <field name="VAR">temperature</field>
+            <value name="VALUE">
+              <block type="dht_read" id="187">
+                <field name="SENSOR">DHT11</field>
+                <field name="PIN">5</field>
+                <field name="TYPE">C</field>
+              </block>
+            </value>
+            <next>
+              <block type="publish_mqtt" id="206" inline="true">
+                <value name="TOPIC">
+                  <block type="text" id="207">
+                    <field name="TEXT">jumbokh/T</field>
+                  </block>
+                </value>
+                <value name="MESSAGE">
+                  <block type="text_join" id="239" inline="false">
+                    <mutation items="1"></mutation>
+                    <value name="ADD0">
+                      <block type="variables_get" id="225">
+                        <field name="TYPE">Float</field>
+                        <field name="VAR">temperature</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="303" inline="false">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="304">
+                        <field name="NUM">2000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="217" inline="true">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">humidity</field>
+                        <value name="VALUE">
+                          <block type="dht_read" id="218">
+                            <field name="SENSOR">DHT11</field>
+                            <field name="PIN">5</field>
+                            <field name="TYPE">h</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="publish_mqtt" id="260" inline="true">
+                            <value name="TOPIC">
+                              <block type="text" id="261">
+                                <field name="TEXT">jumbokh/H</field>
+                              </block>
+                            </value>
+                            <value name="MESSAGE">
+                              <block type="text_join" id="269" inline="false">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                  <block type="variables_get" id="280">
+                                    <field name="TYPE">Number</field>
+                                    <field name="VAR">humidity</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="delay_custom" id="305" inline="false">
+                                <value name="DELAY_TIME">
+                                  <block type="math_number" id="306">
+                                    <field name="NUM">2000</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="mqtt_event" id="81" x="463" y="38">
+    <statement name="MSG_TOPIC_EQAL">
+      <block type="controls_if" id="87" inline="false">
+        <mutation elseif="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="98" inline="true">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="mqtt_received_msg" id="115"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="122">
+                <field name="TEXT">1</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="inout_digital_write" id="135">
+            <field name="PIN">2</field>
+            <field name="STAT">HIGH</field>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_compare" id="137" inline="true">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="mqtt_received_msg" id="138"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="139">
+                <field name="TEXT">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="inout_digital_write" id="140">
+            <field name="PIN">2</field>
+            <field name="STAT">LOW</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
