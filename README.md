@@ -41,4 +41,6 @@
 * [ESP32s spec.](https://docs.ai-thinker.com/_media/esp32/docs/nodemcu-32s_product_specification.pdf)
 * [ESP32 規格書](https://docs.ai-thinker.com/_media/esp32/docs/nodemcu-32s_%E4%BA%A7%E5%93%81%E8%A7%84%E6%A0%BC%E4%B9%A6.pdf)
 * [聯發科範例](https://docs.labs.mediatek.com/linkit-7697-blocklyduino/a05-12880823.html)
+* [MQTT Dashboard - Android](https://drive.google.com/file/d/1DQxWv3qsKRRN4Zlp9aev1-q-80BBzX4i/view?usp=sharing)
+* [按鈕控制](https://docs.labs.mediatek.com/linkit-7697-blocklyduino/e01-led-12883452.html)
 ##
