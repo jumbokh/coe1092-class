@@ -1,5 +1,5 @@
 # 物聯網應用創意實作 class 
-# 4/1, 4/8, 4/15, 4/22
+# 4/1, 4/8, 4/15
 ##
 ### 講義 [BlocklyDuino](https://github.com/jumbokh/coe1092-class/blob/main/doc/BlocklyDuino.pptx)
 ##
