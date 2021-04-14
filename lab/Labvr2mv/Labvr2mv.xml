@@ -1,0 +1,81 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="739" x="80" y="40">
+    <field name="BOARD_TYPE">ESP32</field>
+    <next>
+      <block type="initializes_loop" id="740">
+        <statement name="CONTENT">
+          <block type="variables_set" id="743" inline="true">
+            <field name="TYPE">Number</field>
+            <field name="VAR">input</field>
+            <value name="VALUE">
+              <block type="inout_custom_analog_read" id="752" inline="true">
+                <value name="PIN_ANALOGREAD">
+                  <block type="math_number" id="753">
+                    <field name="NUM">36</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="serial_print" id="761" inline="false">
+                <value name="CONTENT">
+                  <block type="text" id="762">
+                    <field name="TEXT">輸入電壓: </field>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_print" id="770" inline="false">
+                    <value name="CONTENT">
+                      <block type="math_arithmetic" id="809" inline="true">
+                        <field name="OP">DIVIDE</field>
+                        <value name="A">
+                          <block type="math_arithmetic" id="782" inline="true">
+                            <field name="OP">MULTIPLY</field>
+                            <value name="A">
+                              <block type="variables_get" id="787">
+                                <field name="TYPE">Number</field>
+                                <field name="VAR">input</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="798">
+                                <field name="NUM">3300</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="820">
+                            <field name="NUM">4096</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_println" id="828" inline="false">
+                        <value name="CONTENT">
+                          <block type="text" id="829">
+                            <field name="TEXT">mV</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay_custom" id="841" inline="false">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="842">
+                                <field name="NUM">1000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

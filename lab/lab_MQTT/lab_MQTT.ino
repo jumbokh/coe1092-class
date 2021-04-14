@@ -3,7 +3,7 @@
  *
  * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt
  *
- * Date: Tue, 13 Apr 2021 02:45:46 GMT
+ * Date: Wed, 14 Apr 2021 01:58:07 GMT
  */
 
 /*
@@ -16,6 +16,10 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <DHT.h>
+
+float now_time;
+
+float run_time;
 
 float temperature;
 
@@ -58,9 +62,11 @@ void mqttCallback(char* topic, byte* payload, unsigned int length){
   receivedMsg.trim();
   if (receivedMsg == "1") {
     digitalWrite(2, HIGH);
+    digitalWrite(1,HIGH);
 
   } else if (receivedMsg == "0") {
     digitalWrite(2, LOW);
+    digitalWrite(1,LOW);
   }
 
 }
@@ -75,18 +81,24 @@ void setup()
   delay(300);
   connectMQTT();
   myClient.subscribe(String("jumbokh/light").c_str());
+  run_time = millis();
   dht11_p5.begin();
   pinMode(2, OUTPUT);
+  pinMode(1,OUTPUT);
 }
 
 
 void loop()
 {
   myClient.loop();
-  temperature = dht11_p5.readTemperature();
-  myClient.publish(String("jumbokh/T").c_str(),String(String() + temperature).c_str());
-  delay(2000);
-  humidity = dht11_p5.readHumidity();
-  myClient.publish(String("jumbokh/H").c_str(),String(String() + humidity).c_str());
-  delay(2000);
+  now_time = millis();
+  if (now_time - run_time >= 2000) {
+    temperature = dht11_p5.readTemperature();
+    myClient.publish(String("jumbokh/T").c_str(),String(String() + temperature).c_str());
+    humidity = dht11_p5.readHumidity();
+    myClient.publish(String("jumbokh/H").c_str(),String(String() + humidity).c_str());
+    delay(300);
+    run_time = millis();
+
+  }
 }

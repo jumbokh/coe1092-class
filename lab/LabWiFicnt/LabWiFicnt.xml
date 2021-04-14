@@ -1,0 +1,115 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="253" x="80" y="40">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="linkit_wifi_wait_until_ready" id="260" inline="false">
+        <value name="SSID">
+          <block type="text" id="261">
+            <field name="TEXT">gigaenergy</field>
+          </block>
+        </value>
+        <value name="PASSWORD">
+          <block type="text" id="262">
+            <field name="TEXT">12369874</field>
+          </block>
+        </value>
+        <next>
+          <block type="esp32_board_usb" id="384" inline="true">
+            <field name="USB_PORT">1</field>
+            <value name="ON_OFF">
+              <block type="inout_highlow" id="385">
+                <field name="BOOL">LOW</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_init" id="283">
+                <field name="SPEED">115200</field>
+                <next>
+                  <block type="variables_set" id="293" inline="true">
+                    <field name="TYPE">String</field>
+                    <field name="VAR">ipaddr</field>
+                    <value name="VALUE">
+                      <block type="linkit_wifi_ip_address" id="268"></block>
+                    </value>
+                    <next>
+                      <block type="serial_println" id="312" inline="false">
+                        <value name="CONTENT">
+                          <block type="text_join" id="275" inline="false">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="290">
+                                <field name="TEXT">IP:</field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="variables_get" id="304">
+                                <field name="TYPE">String</field>
+                                <field name="VAR">ipaddr</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_if" id="357" inline="false">
+                            <value name="IF0">
+                              <block type="logic_compare" id="368" inline="true">
+                                <field name="OP">NEQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="362">
+                                    <field name="TYPE">String</field>
+                                    <field name="VAR">ipaddr</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="375">
+                                    <field name="TEXT">0.0.0.0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="esp32_board_usb" id="327" inline="true">
+                                <field name="USB_PORT">1</field>
+                                <value name="ON_OFF">
+                                  <block type="inout_highlow" id="328">
+                                    <field name="BOOL">HIGH</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="delay_custom" id="340" inline="false">
+                                    <value name="DELAY_TIME">
+                                      <block type="math_number" id="341">
+                                        <field name="NUM">5000</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="esp32_board_usb" id="350" inline="true">
+                                        <field name="USB_PORT">1</field>
+                                        <value name="ON_OFF">
+                                          <block type="inout_highlow" id="351">
+                                            <field name="BOOL">LOW</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="254"></block>
+    </next>
+  </block>
+</xml>
