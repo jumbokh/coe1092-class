@@ -30,6 +30,11 @@
 12. [LCD1602](https://github.com/jumbokh/coe1092-class/tree/main/lab/lcd1602test)
 * ![LCD1602](https://github.com/jumbokh/coe1092-class/blob/main/images/ESP32s-LCD1602Test_bb.jpg)
 13. [DHT11+LCD1602](https://github.com/jumbokh/coe1092-class/tree/main/lab/lcd1602DHT11)
+14. [WiFi Client](https://github.com/jumbokh/coe1092-class/tree/main/lab/LabWiFicnt)
+15. [類比實驗 VR](https://github.com/jumbokh/coe1092-class/tree/main/lab/Labvr)
+16. [類比實驗 單位轉換](https://github.com/jumbokh/coe1092-class/tree/main/lab/Labvr2mv)
+17. [MQTT](https://github.com/jumbokh/coe1092-class/tree/main/lab/lab_MQTT)
+18. [usb Light](https://github.com/jumbokh/coe1092-class/tree/main/lab/LabusbLED)
 ##
 ### refers
 * [ESP32](https://stanley2910.pixnet.net/blog/post/192141981-esp32-%E7%A1%AC%E9%AB%94%E8%A6%8F%E6%A0%BC)
